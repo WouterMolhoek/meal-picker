@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #F9FAF5;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #756fcf;
+}
+
+#container {
+  width: 500px;
+  height: 700px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+#meal-title {
+  font-size: 40px;
+  text-align: center;
+}
+
+#meal-img {
+  width: 400px;
+}
