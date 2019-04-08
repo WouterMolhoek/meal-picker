@@ -32,11 +32,13 @@ body {
 
 #meal-content section {
   margin: 20px;
+  border-radius: 8px;
 }
+
+.shadow {box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);}
 
 #left-content {
   background-color: #fff;
-  border-radius: 8px;
   color: #000;
   padding: 25px;
 }
