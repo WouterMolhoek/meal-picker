@@ -4,9 +4,9 @@
 }
 
 body {
-  background-color: #F9FAF5;
+  background-color: #E28935;
   font-family: 'Source Sans Pro', sans-serif;
-  color: #756fcf;
+  color: #fff;
 }
 
 #container {
@@ -34,13 +34,19 @@ body {
   margin: 20px;
 }
 
+#left-content {
+  background-color: #fff;
+  border-radius: 8px;
+  color: #000;
+  padding: 25px;
+}
+
 #meal-img {
   width: 350px;
   border-radius: 8px;
 }
 
 #meal-video {
-  border-radius: 8px;
   width: 350px;
   margin-top: 15px;
 }
