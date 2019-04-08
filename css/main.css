@@ -10,7 +10,7 @@ body {
 }
 
 #container {
-  width: 800px;
+  width: 1200px;
   min-height: 500px;
   padding: 45px;
   margin-left: auto;
@@ -30,15 +30,21 @@ body {
   margin-top: 15px;
 }
 
-#meal-content section {
-  margin: 20px;
+.box {
+  margin: 15px;
   border-radius: 8px;
 }
 
 .shadow {box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);}
 
-#left-content {
-  background-color: #fff;
+#instructions {
+  background-color: #F9FAF5;
+  color: #000;
+  padding: 25px;
+}
+
+#ingredients {
+  background-color: #F9FAF5;
   color: #000;
   padding: 25px;
 }
@@ -55,6 +61,7 @@ body {
 
 #meal-cat { margin-top: 5px;}
 #meal-cat::before {
-  content: 'Category: ';
+  content: 'Category:';
   font-weight: bold;
+  margin-right: 8px;
 }
