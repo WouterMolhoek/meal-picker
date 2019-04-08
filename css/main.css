@@ -10,12 +10,13 @@ body {
 }
 
 #container {
-  width: 500px;
-  height: 700px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
+  width: 800px;
+  min-height: 500px;
+  padding: 45px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+  margin-top: 25px;
 }
 
 #meal-title {
@@ -23,6 +24,29 @@ body {
   text-align: center;
 }
 
+#meal-content {
+  display: flex;
+  min-height: 500px;
+  margin-top: 15px;
+}
+
+#meal-content section {
+  margin: 20px;
+}
+
 #meal-img {
-  width: 400px;
+  width: 350px;
+  border-radius: 8px;
+}
+
+#meal-video {
+  border-radius: 8px;
+  width: 350px;
+  margin-top: 15px;
+}
+
+#meal-cat { margin-top: 5px;}
+#meal-cat::before {
+  content: 'Category: ';
+  font-weight: bold;
 }
