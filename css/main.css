@@ -33,6 +33,7 @@ body {
   position: absolute;
   top: 15px;
   right: 15px;
+  width: 350px;
 }
 
 #meal-search {
@@ -42,6 +43,10 @@ body {
   padding: 10px;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
+}
+
+#meal-options form {
+  display: inline-block;
 }
 
 .btn {
@@ -63,7 +68,9 @@ body {
 #refresh-btn {
   margin-left: 5px;
   border-radius: 8px;
+  float: right;
 }
+
 
 #search-btn {
   border-top-right-radius: 8px;
