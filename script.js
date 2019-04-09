@@ -11,13 +11,24 @@ const videoEl = document.getElementById('meal-video');
 const setupUI = () => {
 
   getData()
-   .then(({name,category,instructions,img,video}) =>  {
+   .then(({name,category,instructions,ingredients,img,video}) =>  {
+
      title.innerHTML = name;
      document.title = 'Meal Picker : ' + name;
      instr.innerHTML = instructions;
      catagory.innerHTML = category;
      imgEl.src = img;
      videoEl.src = video;
+
+    // Remove the listed items
+    ingr.innerHTML = '';
+
+    // Append the new items onto the ul element
+     for (let z in ingredients) {
+      const li = document.createElement('li');
+      li.innerHTML = ingredients[z];
+      ingr.appendChild(li);
+    }
    })
     .catch(console.error)
 }
@@ -31,14 +42,24 @@ async function getData() {
   const json = await response.json();
   const data = json.meals[0];
 
+  const video = data.strYoutube.replace("watch?v=", "embed/");
+
+  const ingredients = [];
+  const array = Object.values(data);
+
+  // Store all the ingredients in the ingredients array
+  for (let i = 9; i < 29; i++) {
+      if (array[i] === "") { break; }
+      ingredients.push(array[i])
+  }
 
   return {
     name: data.strMeal,
     category: data.strCategory,
     instructions: data.strInstructions,
-    ingredients: '',
+    ingredients: ingredients,
     img: data.strMealThumb,
-    video: data.strYoutube.replace("watch?v=", "embed/")
+    video: video
   }
 }
 

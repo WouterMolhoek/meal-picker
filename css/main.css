@@ -70,7 +70,6 @@ body {
   border-bottom-right-radius: 8px;
 }
 
-
 #meal-content {
   display: flex;
   min-height: 500px;
@@ -94,6 +93,13 @@ body {
   background-color: #F9FAF5;
   color: #000;
   padding: 25px;
+}
+
+#meal-ingr {
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 5px;
+  width: 100px;
 }
 
 #meal-img {
