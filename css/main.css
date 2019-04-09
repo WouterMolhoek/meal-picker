@@ -32,11 +32,11 @@ body {
 #meal-options {
   position: absolute;
   top: 15px;
-  right: 20px;
+  right: 15px;
 }
 
 #meal-search {
-  width: 240px;
+  width: 250px;
   height: 15px;
   border: 0;
   padding: 10px;
@@ -53,6 +53,13 @@ body {
   position: relative;
 }
 
+.icon-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
 #refresh-btn {
   margin-left: 5px;
   border-radius: 8px;
@@ -63,12 +70,6 @@ body {
   border-bottom-right-radius: 8px;
 }
 
-.icon-center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-}
 
 #meal-content {
   display: flex;

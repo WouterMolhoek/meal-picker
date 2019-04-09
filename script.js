@@ -7,6 +7,7 @@ const catagory = document.getElementById('meal-cat');
 const imgEl = document.getElementById('meal-img');
 const videoEl = document.getElementById('meal-video');
 
+
 const setupUI = () => {
 
   getData()
@@ -42,3 +43,10 @@ async function getData() {
 }
 
 setupUI();
+
+// Buttons
+const refreshBtn = document.getElementById('refresh-btn');
+const searchBtn = document.getElementById('search-btn');
+
+// Refresh the page
+refreshBtn.addEventListener('click', setupUI);
