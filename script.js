@@ -80,6 +80,13 @@ refreshBtn.addEventListener('click', () => {
 // Search for specefic meal
 searchBtn.addEventListener('click', (e) => {
   e.preventDefault();
+
+  // Get the searchbar input value
   const input = document.getElementById('meal-search').value;
+
+  // When the input is empty , still fetch a random meal
+  if (input.length == 0) {
+    return setupUI(mealDB_random);
+  }
   setupUI(mealDB_search + input);
 });
