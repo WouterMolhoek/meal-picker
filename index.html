@@ -3,19 +3,19 @@
   <head>
     <meta charset="utf-8">
     <title>Meal Picker</title>
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
   </head>
   <body>
     <section id="container">
       <header>
-        <h1 id="meal-title"></h1>
-        <div id="meal-options">
-          <form>
-            <input id="meal-search" type="text" placeholder="Search..">
-            <button id="search-btn" class="btn" type="submit" placeholder="Search"><img class="icon-center" src="icons/search.svg"></button>
+        <h1 id="meal-title" class="an"></h1>
+        <div id="meal-options" class="an">
+          <form id="search-form">
+            <input id="meal-search" class="meal-search" type="text" placeholder="Search..">
+            <button id="search-btn" class="search-btn btn" type="submit" placeholder="Search"><img class="center" src="img/icons/search.svg"></button>
           </form>
-          <button id="refresh-btn" class="btn" type="submit" placeholder="Submit"><img class="icon-center" src="icons/refresh.svg"></button>
+          <button id="refresh-btn" class="btn" type="submit" placeholder="Submit"><img class="center" src="img/icons/refresh.svg"></button>
         </div>
       </header>
       <section id="meal-content">
@@ -36,8 +36,15 @@
 
           <iframe id="meal-video" class="shadow" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </section>
-
       </section>
+
+      <div id="img-error-container" class="an">
+        <img id="error-img" src="img/error.svg">
+        <form id="search-form-error">
+          <input class="meal-search" type="text" placeholder="Search..">
+          <button class="search-btn btn" type="submit" placeholder="Search"><img class="center" src="img/icons/search.svg"></button>
+        </form>
+      </div>
     </section>
     <script src="script.js"></script>
   </body>

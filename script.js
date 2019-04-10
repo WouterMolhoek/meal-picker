@@ -12,7 +12,8 @@ const videoEl = document.getElementById('meal-video');
 const setupUI = (api) => {
 
   getData(api)
-   .then(({name,category,instructions,ingredients,img,video}) =>  {
+   .then((result) =>  {
+     const {name,category,instructions,ingredients,img,video} = result;
 
      title.innerHTML = name;
 
@@ -23,23 +24,23 @@ const setupUI = (api) => {
      imgEl.src = img;
      videoEl.src = video;
 
-    // Remove the listed items
-    ingr.innerHTML = '';
+     // Remove the listed items
+     ingr.innerHTML = '';
 
-    // Append the new items onto the ul element
+     // Append the new items onto the ul element
      for (let z in ingredients) {
-      const li = document.createElement('li');
-      li.innerHTML = ingredients[z];
-      ingr.appendChild(li);
-    }
+       const li = document.createElement('li');
+       li.innerHTML = ingredients[z];
+       ingr.appendChild(li);
+     }
    })
-    .catch(console.error)
+    .catch(() => {
+      animateErr()
+    })
 }
 
 
 async function getData(api) {
-
-  title.innerHTML = 'loading...';
 
   const response = await fetch(api);
   const json = await response.json();
@@ -53,7 +54,7 @@ async function getData(api) {
   // Store all the ingredients in the ingredients array
   for (let i = 9; i < 29; i++) {
       if (array[i] === "") { break; }
-      
+
       // Make the first letter a capatalized one
       ingredients.push(array[i].charAt(0).toUpperCase() + array[i].slice(1))
   }
@@ -92,3 +93,28 @@ searchBtn.addEventListener('click', (e) => {
   }
   setupUI(mealDB_search + input);
 });
+
+// Error handler 
+const animateErr = () => {
+  const mealContent = document.getElementById('meal-content');
+  const errContainer = document.getElementById('img-error-container');
+  const mealOptions = document.getElementById('meal-options');
+
+  mealContent.style.opacity = '0';
+  title.style.opacity = '0';
+  mealOptions.style.opacity = '0';
+
+  setTimeout(() => {
+
+    mealContent.style.display = 'none';
+    mealOptions.style.display = 'none';
+
+    errContainer.style.opacity = '0';
+    errContainer.style.display = 'block';
+
+
+      setTimeout(() => {
+        errContainer.style.opacity = '1';
+     }, 300);
+  }, 300);
+}

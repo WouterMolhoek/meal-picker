@@ -2,7 +2,7 @@
 
 A website that gives you a random recipy for a meal. You can also search for meals.
 
-![picture](screenshot.gif)
+![picture](img/screenshot.gif)
 
 ## Built with
 
