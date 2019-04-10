@@ -53,7 +53,9 @@ async function getData(api) {
   // Store all the ingredients in the ingredients array
   for (let i = 9; i < 29; i++) {
       if (array[i] === "") { break; }
-      ingredients.push(array[i])
+      
+      // Make the first letter a capatalized one
+      ingredients.push(array[i].charAt(0).toUpperCase() + array[i].slice(1))
   }
 
   return {
