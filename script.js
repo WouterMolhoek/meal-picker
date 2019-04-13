@@ -35,7 +35,21 @@ const setupUI = (api) => {
      }
    })
     .catch(() => {
-      animateErr()
+      const errMsg = document.getElementById('error-msg');
+
+      errMsg.style.opacity = '0';
+      errMsg.style.display = 'block';
+
+      setTimeout(() => {
+        errMsg.style.opacity = '1';
+      }, 300);
+
+      document.onclick = (e) => {
+        if(e.target.id !== 'errMsg'){
+          errMsg.style.display = 'none';
+          console.log(e.target.id);
+        }
+      };
     })
 }
 
@@ -93,28 +107,3 @@ searchBtn.addEventListener('click', (e) => {
   }
   setupUI(mealDB_search + input);
 });
-
-// Error handler 
-const animateErr = () => {
-  const mealContent = document.getElementById('meal-content');
-  const errContainer = document.getElementById('img-error-container');
-  const mealOptions = document.getElementById('meal-options');
-
-  mealContent.style.opacity = '0';
-  title.style.opacity = '0';
-  mealOptions.style.opacity = '0';
-
-  setTimeout(() => {
-
-    mealContent.style.display = 'none';
-    mealOptions.style.display = 'none';
-
-    errContainer.style.opacity = '0';
-    errContainer.style.display = 'block';
-
-
-      setTimeout(() => {
-        errContainer.style.opacity = '1';
-     }, 300);
-  }, 300);
-}

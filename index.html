@@ -12,6 +12,11 @@
         <h1 id="meal-title" class="an"></h1>
         <div id="meal-options" class="an">
           <form id="search-form">
+            <div id="error-msg" class="an">
+              <p>Meal can't be found</p>
+              <img src="img/icons/error.png">
+              <span id="error-arrow"></span>
+            </div>
             <input id="meal-search" class="meal-search" type="text" placeholder="Search..">
             <button id="search-btn" class="search-btn btn" type="submit" placeholder="Search"><img class="center" src="img/icons/search.svg"></button>
           </form>
@@ -38,13 +43,6 @@
         </section>
       </section>
 
-      <div id="img-error-container" class="an">
-        <img id="error-img" src="img/error.svg">
-        <form id="search-form-error">
-          <input class="meal-search" type="text" placeholder="Search..">
-          <button class="search-btn btn" type="submit" placeholder="Search"><img class="center" src="img/icons/search.svg"></button>
-        </form>
-      </div>
     </section>
     <script src="script.js"></script>
   </body>
