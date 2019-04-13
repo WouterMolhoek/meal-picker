@@ -45,9 +45,8 @@ const setupUI = (api) => {
       }, 300);
 
       document.onclick = (e) => {
-        if(e.target.id !== 'errMsg'){
+        if(e.target.id !== 'error-msg'){
           errMsg.style.display = 'none';
-          console.log(e.target.id);
         }
       };
     })
